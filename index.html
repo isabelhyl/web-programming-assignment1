@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+body {
+  margin: 0;
+  min-height: 100vh; /* page at least full height */
+  width: 100vw;
+
+  background-image: url("assets/water pattern.png");
+  background-repeat: repeat-y; /* only repeat vertically */
+  background-size: 100% auto; /* fit width exactly, scale height */
+  background-position: top center;
+
+  overflow-y: auto; /* allow vertical scroll */
+  overflow-x: hidden; /* prevent horizontal scroll */
+}
+
+body::-webkit-scrollbar {
+  display: none; 
+}
+
+
+
+#boat {
+  position: absolute;
+  width: 300px;
+  height: auto;
+  top: 50vh; 
+  left: 50vw; 
+}
+
+
+.island {
+    width: 700px;
+}
+
+.island-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+    height: 100vh;
+}
+
+
+
+h1 {
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+  margin-top: 20px;
+  letter-spacing: 2px;
+}
+
+
+/* guide box */
+.guide-container {
+  max-width: 500px;
+  margin: 20px auto;
+  padding: 20px;
+  background: rgba(0, 0, 50, 0.6); /* semi-transparent dark navy */
+  color: #f0f0f0;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
+  font-family: "Trebuchet MS", sans-serif;
+}
+
+.guide-container p:first-child {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: #ffd700; /* golden highlight for GUIDE: */
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
+}
+
+.guide-container p {
+  margin: 8px 0;
+  line-height: 1.4em;
+}
+
+
+
+  
+</style>
+
+</head>
+<body>
+    <h1 style="padding:20px; color:white;">Isabel's World</h1>
+
+    <div class="guide-container">
+    <p><b>GUIDE:</b></p>
+    <p>Use W to go up, S to go down, A to go left, and D to go right.</p>
+    <p>To interact with an island, press E.</p>
+    </div>
+
+ 
+    <img id="boat" src="assets/Boat_Front.png" alt="Boat">
+
+
+
+    <div class="island-container">
+    <a href="profile/">
+        <img id="AboutMe" class="island" src="assets/AboutMe.png" alt="AboutMe">
+    </a>
+    <a href="hometown/">
+        <img id="Hometown" class="island" src="assets/Hometown.png" alt="Hometown">
+    </a>
+    <a href="food/">
+        <img id="LocalFood" class="island" src="assets/LocalFood.png" alt="LocalFood">
+    </a>
+    <a href="tourist/">
+        <img id="TouristPlaces" class="island" src="assets/TouristPlaces.png" alt="TouristPlaces">
+    </a>
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

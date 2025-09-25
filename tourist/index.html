@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tourist Places</title>
+  <style>
+    body {
+        margin: 0;
+        height: 100vh; 
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;    
+        
+        background: linear-gradient(to bottom right, #a8d8f0, #d4f1f9);
+        font-family: "Trebuchet MS", sans-serif;
+        color: #333;
+        text-align: center;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2.5rem;
+      color: #004c75;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    .box-thingy {
+      width: 70%;
+      max-width: 900px;
+      height: 350px;
+      margin: 30px auto;
+      padding: 20px;
+
+      display: flex;         
+      align-items: center;   
+      gap: 20px;
+      overflow-x: auto;       
+      overflow-y: hidden;
+      white-space: nowrap;
+
+      background: rgba(255,255,255,0.9);
+      border-radius: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+    .box-thingy::-webkit-scrollbar {
+      height: 8px;
+    }
+    .box-thingy::-webkit-scrollbar-thumb {
+      background: #77b6e0;
+      border-radius: 10px;
+    }
+
+    .place {
+      flex: 0 0 auto;         
+      text-align: center;
+    }
+
+    .place img {
+      width: 250px;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+    }
+
+    .place p {
+      font-weight: bold;
+      color: #004c75;
+      margin: 0;
+      width: 300px;
+    }
+
+    .side-image {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      height: auto;
+      z-index: 1; 
+      opacity: 0.9;
+    }
+    .side-left {
+      left: 0;
+    }
+    .side-right {
+      right: 0;
+    }
+
+    #blokM {
+        width: 150px;
+    }
+
+  </style>
+</head>
+<body>
+  <img src="C:\Users\Palupi\Documents\quiz1\assets\Spring_Left.png" alt="Spring Left" class="side-image side-left">
+  <img src="C:\Users\Palupi\Documents\quiz1\assets\Spring_Right.png" alt="Spring Right" class="side-image side-right">
+
+  <h1>Tourist Places</h1>
+
+  <div class="box-thingy">
+    <div class="place">
+      <img src="C:\Users\Palupi\Documents\quiz1\assets\Kantor_BIN.jpg" alt="Kantor BIN">
+      <p>Kantor BIN</p>
+    </div>
+    <div class="place">
+      <img src="C:\Users\Palupi\Documents\quiz1\assets\Gedung_DPR.jpg" alt="Gedung DPR">
+      <p>Gedung DPR</p>
+    </div>
+    <div class="place">
+      <img src="C:\Users\Palupi\Documents\quiz1\assets\Rumah_Sahroni.jpeg" alt="Rumah Syahroni">
+      <p>Rumah Ahmad Sahroni</p>
+    </div>
+    <div class="place">
+      <img src="C:\Users\Palupi\Documents\quiz1\assets\Blok_M.jpeg" alt="Blok M" id="blokM">
+      <p>Blok M</p>
+    </div>
+  </div>
+</body>
+</html>

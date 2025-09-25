@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Food</title>
+  <style>
+    body {
+        margin: 0;
+        height: 100vh; 
+        display: flex;
+        flex-direction: column; 
+        justify-content: center; 
+        align-items: center;    
+        
+        background: linear-gradient(to bottom right, #a8d8f0, #d4f1f9);
+        font-family: "Trebuchet MS", sans-serif;
+        color: #333;
+        text-align: center;
+    }
+
+    h1 {
+      margin-top: 30px;
+      font-size: 2.5rem;
+      color: #004c75;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.2);
+    }
+
+    .box-thingy {
+        width: 60%;
+        max-width: 700px;
+        height: 300px;
+        margin: 30px auto;
+        padding: 20px;
+
+        display: flex;                /* enable flexbox */
+        align-items: center;          /* vertical center */
+        overflow-x: auto;             /* sideways scroll */
+        overflow-y: hidden;
+        white-space: nowrap;          /* prevent wrapping */
+
+        background: rgba(255,255,255,0.9);
+        border-radius: 20px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    }
+
+
+    .box-thingy::-webkit-scrollbar {
+      height: 8px;
+    }
+    .box-thingy::-webkit-scrollbar-thumb {
+      background: #77b6e0;
+      border-radius: 10px;
+    }
+
+    .toggle-img {
+      display: inline-block;
+      width: 400px;
+      margin-right: 15px;
+      cursor: pointer;
+      transition: transform 0.2s;
+    }
+
+    .toggle-img:hover {
+      transform: scale(1.05);
+    }
+
+    .side-image {
+      position: fixed;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 400px;
+      height: auto;
+      z-index: 1; /* behind content */
+      opacity: 0.9;
+    }
+    .side-left {
+      left: 0;
+    }
+    .side-right {
+      right: 0;
+    }
+  </style>
+</head>
+<body>
+  <img src="C:\Users\Palupi\Documents\quiz1\assets\Spring_Left.png" alt="Spring Left" class="side-image side-left">
+  <img src="C:\Users\Palupi\Documents\quiz1\assets\Spring_Right.png" alt="Spring Right" class="side-image side-right">
+
+  <h1>Local Food</h1>
+
+  <div class="box-thingy">
+    <img src="C:\Users\Palupi\Documents\quiz1\assets\Plate.png" 
+         data-alt="C:\Users\Palupi\Documents\quiz1\assets\Plate_Polusi.png" 
+         class="toggle-img">
+
+    <img src="C:\Users\Palupi\Documents\quiz1\assets\Plate.png" 
+         data-alt="C:\Users\Palupi\Documents\quiz1\assets\Plate_Korupsi.png" 
+         class="toggle-img">
+
+    <img src="C:\Users\Palupi\Documents\quiz1\assets\Plate.png" 
+         data-alt="C:\Users\Palupi\Documents\quiz1\assets\Plate_Macet.png" 
+         class="toggle-img">
+
+    <img src="C:\Users\Palupi\Documents\quiz1\assets\Plate.png" 
+         data-alt="C:\Users\Palupi\Documents\quiz1\assets\Plate_Influencer.png" 
+         class="toggle-img">
+  </div>
+
+  <script>
+    document.querySelectorAll(".toggle-img").forEach(img => {
+      const defaultSrc = img.src; 
+      const altSrc = img.getAttribute("data-alt");
+      img.addEventListener("click", () => {
+        img.src = (img.src.endsWith("Plate.png")) ? altSrc : defaultSrc;
+      });
+    });
+  </script>
+</body>
+</html>
